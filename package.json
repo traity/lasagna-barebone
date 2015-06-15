@@ -1,0 +1,25 @@
+{
+  "name": "lasagna-barebone",
+  "version": "0.0.1",
+  "description": "Lasagna barebone",
+  "scripts": {
+    "start": "coffee index.coffee",
+    "test": "mocha spec/** --compilers coffee:coffee-script/register",
+    "config": "coffee -e \"console.log require('./config/vars')\""
+  },
+  "dependencies": {
+    "bluebird": "^2.9.25",
+    "coffee-script": "^1.9.2",
+    "promised-mongo": "^0.11.1",
+    "lasagna": "^0.1.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.2.4",
+    "request": "^2.55.0"
+  },
+  "engines": {
+    "node": "~0.12.2"
+  }
+}
