@@ -1,6 +1,5 @@
-Promise = require('bluebird')
-{App} = require('lasagna')
-mongo = require('promised-mongo')
+{App}            = require('lasagna')
+mongodb          = require('mongodb')
 SampleRepository = require('../app/repositories/sample_repository')
 SampleHelper     = require('../app/helpers/sample_helper')
 SampleService    = require('../app/services/sample_service')
@@ -11,9 +10,9 @@ module.exports = class Factory
     @_api  = api
 
   init: ->
-    @_db = mongo(@_vars.mongoUrl)
-    @_objects()
-    new Promise((r)->r())
+    mongodb.MongoClient.connect(@_vars.mongoUrl).then (db) =>
+      @_db = db
+      @_objects()
 
   finalize: ->
     @_db.close()
