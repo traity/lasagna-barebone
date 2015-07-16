@@ -1,5 +1,5 @@
 Lasagna barebone
-==============
+================
 
 Barebone API example using Lasagna package.
 
@@ -9,6 +9,10 @@ Usage
 To run the test suite:
 
     npm test
+
+To check out test coverage:
+
+    npm run-script coverage
 
 To start the API:
 
