@@ -1,3 +1,3 @@
 module.exports = [
-  ['get', '/sample', 'sampleService', 'sampleMethod']
+  ['get', '/sample', 'sampleService', 'sampleAction']
 ]

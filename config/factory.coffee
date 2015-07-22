@@ -2,7 +2,6 @@
 mongodb          = require('mongodb')
 SampleRepository = require('../app/repositories/sample_repository')
 SampleHelper     = require('../app/helpers/sample_helper')
-SampleService    = require('../app/services/sample_service')
 
 module.exports = class Factory
   constructor: (vars, api=[]) ->
@@ -20,5 +19,6 @@ module.exports = class Factory
   _objects: ->
     @samples       = new SampleRepository(@_db.collection('users'))
     @sampleHelper  = new SampleHelper(@_vars.s3Key, @_vars.s3AccessKey, @_vars.s3Bucket)
-    @sampleService = new SampleService(@)
+    @sampleService =
+      sampleAction: require('../app/actions/sample_service/sample_action').action(@)
     @app           = new App(@_vars.port, @_api, @)
