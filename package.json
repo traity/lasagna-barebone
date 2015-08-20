@@ -4,8 +4,8 @@
   "description": "Lasagna barebone",
   "scripts": {
     "start": "coffee index.coffee",
-    "test": "mocha spec/** --compilers coffee:coffee-script/register",
-    "coverage": "mocha spec/** --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul; istanbul report; open coverage/lcov-report/index.html",
+    "test": "mocha spec/**/** --compilers coffee:coffee-script/register",
+    "coverage": "mocha spec/**/** --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul; istanbul report; open coverage/lcov-report/index.html",
     "config": "coffee -e \"console.log require('./config/vars')\""
   },
   "dependencies": {
@@ -13,7 +13,6 @@
     "coffee-script": "^1.9.2",
     "lasagna": "^0.3.0",
     "mongodb": "^2.0.39",
-    "promised-mongo": "^0.11.1",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
